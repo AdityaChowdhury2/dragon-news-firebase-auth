@@ -2,20 +2,11 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
-import ReactStarsRating from 'react-awesome-stars-rating';
 import ReactStars from 'react-rating-stars-component';
 const NewsCard = ({ news }) => {
-	const {
-		_id,
-		total_view,
-
-		title,
-		details,
-		image_url,
-		rating,
-		author,
-	} = news;
-	const { name, published_date, img } = author;
+	const { _id, total_view, title, details, image_url, rating, author } =
+		news || {};
+	const { name, published_date, img } = author || {};
 	const { number } = rating;
 	console.log(news);
 	return (
@@ -27,9 +18,11 @@ const NewsCard = ({ news }) => {
 							<img src={img} className="rounded-full" />
 						</div>
 						<div>
-							<h3 className="font-bold">{name}</h3>
+							<h3 className="font-bold">{name || 'Admin'}</h3>
 							<p className="text-gray-500">
-								{moment(published_date).format('YYYY-MM-DD')}
+								{published_date
+									? moment(published_date).format('YYYY-MM-DD')
+									: ''}
 							</p>
 						</div>
 					</div>

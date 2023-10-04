@@ -1,10 +1,12 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import useAuth from '../../hooks/useAuth';
 // import { useEffect } from 'react';
 
 const Login = () => {
 	const { /*user,*/ signInUser } = useAuth();
+	const location = useLocation();
+	console.log(location);
 	const navigate = useNavigate();
 	/* 
 	
@@ -23,7 +25,8 @@ const Login = () => {
 		}
 		signInUser(user)
 			.then(res => {
-				navigate('/');
+				console.log(res.user);
+				navigate(location?.state ? location.state : '/');
 			})
 			.catch(err => {
 				console.log(err.message);

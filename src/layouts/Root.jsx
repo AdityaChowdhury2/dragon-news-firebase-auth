@@ -4,9 +4,7 @@ import AuthProvider from '../providers/AuthProvider/AuthProvider';
 const Root = () => {
 	return (
 		<div className="container font-poppins">
-			<AuthProvider>
-				<Outlet />
-			</AuthProvider>
+			<Outlet />
 		</div>
 	);
 };
