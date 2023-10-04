@@ -8,6 +8,7 @@ export default {
     extend: {
       backgroundImage: {
         'ad': "url('./src/assets/bg.png')",
+        'ad-rotate': "url('./src/assets/bg-rotate.png')",
       },
       screens: {
         lg: '1140px',

@@ -1,7 +1,16 @@
 import { Link, NavLink } from 'react-router-dom';
 import userDefaultPicture from '../../../assets/user.png';
+import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
+	const { user, logOutUser } = useAuth();
+	const handleLogout = () => {
+		logOutUser()
+			.then(() => {})
+			.catch(err => {
+				console.log(err.message);
+			});
+	};
 	const navLinks = (
 		<>
 			<li>
@@ -53,9 +62,15 @@ const Navbar = () => {
 					<div className="w-10 rounded-full">
 						<img src={userDefaultPicture} alt="" />
 					</div>
-					<Link to={'/login'} className="btn">
-						Login
-					</Link>
+					{user ? (
+						<button className="btn" onClick={handleLogout}>
+							LogOut
+						</button>
+					) : (
+						<Link to={'/login'} className="btn ">
+							Login
+						</Link>
+					)}
 				</div>
 			</div>
 		</>

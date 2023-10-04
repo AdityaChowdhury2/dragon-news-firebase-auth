@@ -52,17 +52,19 @@ const RightSideNav = () => {
 				<img src={qZone2} alt="" />
 				<img src={qZone3} alt="" />
 			</div>
-			<div className="bg-ad bg-no-repeat bg-auto bg-gray-700 rounded-sm bg-blend-overlay px-8 py-16 text-white text-center mb-2">
-				<h2 className="text-3xl font-bold leading-10">
-					Create an Amazing NewsPaper
-				</h2>
-				<p className="mt-5 leading-6 mb-8">
-					Discover thousands of options, easy to customize layouts, one-click to
-					import demo and much more.
-				</p>
-				<button className="px-8 py-4 text-white bg-pink-700 hover:bg-pink-800 rounded-sm text-xl">
-					Learn More
-				</button>
+			<div className="bg-ad-rotate lg:bg-ad bg-no-repeat bg-cover lg:bg-auto bg-gray-700 rounded-sm bg-blend-overlay ">
+				<div className="px-8 py-16 text-white text-center mb-2">
+					<h2 className="text-3xl font-bold leading-10">
+						Create an Amazing NewsPaper
+					</h2>
+					<p className="mt-5 leading-6 mb-8">
+						Discover thousands of options, easy to customize layouts, one-click
+						to import demo and much more.
+					</p>
+					<button className="px-8 py-4 text-white bg-pink-700 hover:bg-pink-800 rounded-sm text-xl">
+						Learn More
+					</button>
+				</div>
 			</div>
 		</>
 	);
