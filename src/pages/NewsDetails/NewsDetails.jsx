@@ -5,7 +5,7 @@ import Navbar from '../Shared/Navbar/Navbar';
 
 const NewsDetails = () => {
 	const { id } = useParams();
-	const news = useLoaderData();
+	// const news = useLoaderData();
 	return (
 		<div>
 			<Header />

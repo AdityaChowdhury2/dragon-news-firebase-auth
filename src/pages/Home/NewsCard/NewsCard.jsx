@@ -8,7 +8,7 @@ const NewsCard = ({ news }) => {
 		news || {};
 	const { name, published_date, img } = author || {};
 	const { number } = rating;
-	console.log(news);
+	// console.log(news);
 	return (
 		<div className="border rounded-lg">
 			<div className="p-5 bg-gray-200 rounded-t-lg">

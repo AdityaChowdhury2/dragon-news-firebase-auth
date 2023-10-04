@@ -14,8 +14,8 @@ const Register = () => {
 		}
 
 		createUser(user)
-			.then(res => {
-				console.log(res.user);
+			.then(() => {
+				console.log('successfully registered and please verify registration');
 			})
 			.catch(err => {
 				console.log(err.message);

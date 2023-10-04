@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Root from '../layouts/Root';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login/Login';
@@ -6,6 +6,7 @@ import Register from '../pages/Register/Register';
 import Error from '../pages/Error/Error';
 import NewsDetails from '../pages/NewsDetails/NewsDetails';
 import PrivateRoute from './PrivateRoute';
+import isUserLoggedIn from '../utils/isUserLoggedIn';
 
 const Routes = createBrowserRouter([
 	{
@@ -20,11 +21,11 @@ const Routes = createBrowserRouter([
 			},
 			{
 				path: '/login',
-				element: <Login />,
+				element: isUserLoggedIn() ? <Navigate to={'/'} /> : <Login />,
 			},
 			{
 				path: '/register',
-				element: <Register />,
+				element: isUserLoggedIn() ? <Navigate to={'/'} /> : <Register />,
 			},
 			{
 				path: '/news/:id',

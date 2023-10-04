@@ -6,7 +6,7 @@ import useAuth from '../../hooks/useAuth';
 const Login = () => {
 	const { /*user,*/ signInUser } = useAuth();
 	const location = useLocation();
-	console.log(location);
+	// console.log(location);
 	const navigate = useNavigate();
 	/* 
 	
@@ -24,8 +24,7 @@ const Login = () => {
 			user[data[0]] = data[1];
 		}
 		signInUser(user)
-			.then(res => {
-				console.log(res.user);
+			.then(() => {
 				navigate(location?.state ? location.state : '/');
 			})
 			.catch(err => {

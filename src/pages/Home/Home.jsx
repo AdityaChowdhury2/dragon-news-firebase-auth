@@ -5,11 +5,9 @@ import LeftSideNav from '../Shared/LeftSideNav/LeftSideNav';
 import Navbar from '../Shared/Navbar/Navbar';
 import RightSideNav from '../Shared/RightSideNav/RightSideNav';
 import BreakingNews from './BreakingNews/BreakingNews';
-import { key } from 'localforage';
 import NewsCard from './NewsCard/NewsCard';
 
 const Home = () => {
-	const { user } = useAuth();
 	const allNews = useLoaderData();
 
 	return (

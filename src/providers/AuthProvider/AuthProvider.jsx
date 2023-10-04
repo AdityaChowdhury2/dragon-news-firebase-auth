@@ -21,11 +21,15 @@ const AuthProvider = ({ children }) => {
 		});
 		return () => unsubscribe();
 	}, []);
-
+	useEffect(() => {
+		localStorage.setItem('user', JSON.stringify(user?.uid || null));
+	}, [user]);
+	// creating user and sending email verification notification
 	const createUser = ({ email, password }) => {
 		setLoading(true);
 		return createUserWithEmailAndPassword(auth, email, password);
 	};
+
 	const signInUser = ({ email, password }) => {
 		setLoading(true);
 		return signInWithEmailAndPassword(auth, email, password);

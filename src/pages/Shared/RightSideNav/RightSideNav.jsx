@@ -8,23 +8,27 @@ import {
 import qZone1 from '../../../assets/qZone1.png';
 import qZone2 from '../../../assets/qZone2.png';
 import qZone3 from '../../../assets/qZone3.png';
+import useAuth from '../../../hooks/useAuth';
 const RightSideNav = () => {
+	const { user } = useAuth();
 	return (
 		<>
-			<div className="p-3">
-				<h2 className="text-xl font-semibold mb-5">Login With</h2>
-				<div className="flex md:flex-col gap-4 justify-evenly">
-					<button className="md:w-full btn btn-outline">
-						<FcGoogle />
-						Google
-					</button>
+			{!user && (
+				<div className="p-3">
+					<h2 className="text-xl font-semibold mb-5">Login With</h2>
+					<div className="flex md:flex-col gap-4 justify-evenly">
+						<button className="md:w-full btn btn-outline">
+							<FcGoogle />
+							Google
+						</button>
 
-					<button className="md:w-full btn btn-outline">
-						<AiFillGithub />
-						Github
-					</button>
+						<button className="md:w-full btn btn-outline">
+							<AiFillGithub />
+							Github
+						</button>
+					</div>
 				</div>
-			</div>
+			)}
 			<div className="p-3 mb-6">
 				<h2 className="text-xl font-semibold capitalize mb-4">Find Us on</h2>
 				<a
